@@ -2,7 +2,7 @@ const { Worker, workerData } = require('worker_threads');
 
 function runService(timeName) {
   return new Promise((resolve, reject) => {
-	console.log(timeName, new Date());
+    console.log(timeName, new Date());
 	
     const worker = new Worker('./service.js', { workerData: null });
     worker.on('message', resolve);
